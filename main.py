@@ -1,15 +1,22 @@
 from pytube import YouTube
 
-video_url = "https://www.youtube.com/watch?v=vWBpzveKvGA"
+video_url = input("Enter the URL of the YouTube video: ")
 
-yt = YouTube(video_url)
+try:
+    yt = YouTube(video_url)
 
+    print("Available stream options:")
+    for i, stream in enumerate(yt.streams):
+        print(f"{i + 1}. {stream}")
 
-stream = yt.streams.get_highest_resolution()
+    stream_index = int(input("Select a stream to download (enter the index): ")) - 1
+    selected_stream = yt.streams[stream_index]
 
-download_folder = "./"
+    download_folder = input("Enter the directory where you want to save the video: ")
 
-stream.download(output_path=download_folder)
+    selected_stream.download(output_path=download_folder)
 
-print("Video downloaded successfully!")
+    print("Video downloaded successfully!")
 
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
