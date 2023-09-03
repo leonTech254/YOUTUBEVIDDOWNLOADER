@@ -9,6 +9,8 @@ A Python script that allows you to download YouTube videos using the `pytube` li
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
+- [Author](#Author)
+
 
 ## Installation
 
@@ -31,5 +33,10 @@ pip install pytube
 ```bash
 python3 main.py
 ```
+
+## Author
+
+- Name:Leon Martin
+- Email:martinleontech23@gmail.com
 
 
